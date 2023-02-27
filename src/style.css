@@ -1,0 +1,35 @@
+
+
+.heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.heading h1{
+    font-size: 15px;
+}
+.heading i{
+    padding: auto;
+    margin: auto 5px;
+}
+
+.inputControl{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.inputControl input{
+    border: none;
+    outline: none;
+    padding: 24px;
+    width: 200px;
+}
+
+.inputControl i{
+    padding: auto;
+    margin: auto 5px;
+}
