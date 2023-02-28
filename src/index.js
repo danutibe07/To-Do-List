@@ -1,5 +1,5 @@
- import _ from "lodash";
- import "./style.css";
+
+import "./style.css";
 const tasks = [
     {
       description: 'Read on Algorithms',
@@ -17,7 +17,7 @@ const tasks = [
     tasks.sort((a, b) => a.index - b.index);
     const todoContent = document.getElementById('content');
     todoContent.innerHTML = '';
-    tasks.forEach((task) => {
+    tasks.forEach((todo) => {
       const template = `  <li class="task">
            <input type="checkbox" class="checkme">
            <input type="text" value="${todo.description}" class="tasks" id="item${todo.index}" readonly>
