@@ -35,7 +35,7 @@ const pendingTasks = () => {
        <textarea class="todo-description" ide=${task.index} rows="1" maxlength="100">${task.description}</textarea> 
       </div>`;
     list.appendChild(edit);
-    //list.appendChild(destroy);
+    // list.appendChild(destroy);
     todoList.appendChild(list);
   });
 };
