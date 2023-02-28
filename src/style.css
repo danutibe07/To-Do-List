@@ -1,14 +1,38 @@
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+main{
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 60%;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: auto;
+    margin-top: 200px;
+    padding: 50px;
+}
 
 .heading{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 30px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 2px solid black;
+    border-bottom: none;
+    padding: 20px 20px ;
+    width: 400px;
 }
 .heading h1{
-    font-size: 15px;
+    font-size: 20px;
 }
 .heading i{
     padding: auto;
@@ -18,18 +42,48 @@
 .inputControl{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 30px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 2px solid black;
+    width: 400px;
+    padding: 20px 20px ;
 }
 .inputControl input{
     border: none;
     outline: none;
-    padding: 24px;
-    width: 200px;
+    font-size: 20px;
 }
 
 .inputControl i{
     padding: auto;
     margin: auto 5px;
 }
+
+.refresh,
+.enter {
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  ul{
+    width: 269px;
+    padding: 30px 20px;
+    font-size: 15px;
+    width: 400px;
+    border: 2px solid black;
+    margin: 0;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  li{
+    border-bottom: 2px solid black;
+  }
+  .clearall{
+    width: 312px;
+    padding: 20px;
+    width: 400px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border: 2px solid black;
+    cursor: pointer;
+  }
