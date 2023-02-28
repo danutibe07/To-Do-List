@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
 <script defer src="main.js"></script></head>
-<body>
-    <h1>Hello webpack!</h1>
-    <h2>Template</h2>
-</body>
+    <body>
+        <main id="container">
+          <div class="heading">
+            <h1>Today's To Do</h1>
+            <i class="uil uil-sync refresh"></i>
+          </div>
+          <div class="inputControl">
+            <input type="text"
+              placeholder="Add to your list..."
+              class="task-input">
+            <i class="uil uil-enter enter"></i>
+          </div>
+          <ul class="content"></ul>
+          <button class="clearall">
+            Clear All Completed
+          </button>
+        </main>
+        <script src="./index.js"></script>
+      </body>
 </html>
