@@ -109,6 +109,7 @@ textarea {
   outline: none;
   border: 0;
   overflow: hidden;
+  resize: none;
 }
 
 .clearall {
