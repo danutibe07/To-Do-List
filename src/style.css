@@ -52,6 +52,10 @@ main {
   padding: 20px 20px;
 }
 
+li input {
+  transform: scale(2);
+}
+
 .inputControl input {
   border: none;
   outline: none;
@@ -89,11 +93,7 @@ li {
   align-items: center;
 }
 
-li input{
-  transform: scale(2);
-}
-
-li div{
+li div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@ li div{
   width: 300px;
 }
 
-textarea{
+textarea {
   width: 270px;
   margin: 0;
   font-size: 18px;
