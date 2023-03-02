@@ -1,5 +1,4 @@
 import './style.css';
-import './modules/todotask.js';
 
 const toDoList = document.querySelector('.content-container');
 
