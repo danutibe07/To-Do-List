@@ -12,14 +12,13 @@ main {
   box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   width: 60%;
   align-content: center;
-  flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   margin: auto;
-  margin-top: 200px;
+  height: 100vh;
   padding: 50px;
 }
 
@@ -52,8 +51,20 @@ main {
   padding: 20px 20px;
 }
 
-li input {
+.checkbox {
   transform: scale(2);
+  width: 50px;
+}
+
+li input {
+  width: 250px;
+  margin: 0;
+  font-size: 18px;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  overflow: hidden;
+  resize: none;
 }
 
 .inputControl input {
@@ -101,17 +112,6 @@ li div {
   width: 300px;
 }
 
-textarea {
-  width: 270px;
-  margin: 0;
-  font-size: 18px;
-  padding: 8px;
-  outline: none;
-  border: 0;
-  overflow: hidden;
-  resize: none;
-}
-
 .clearall {
   padding: 20px;
   width: 400px;
@@ -121,4 +121,22 @@ textarea {
   border: 2px solid black;
   border-top: 0;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.buttons {
+  width: 50px;
+  z-index: 5;
+}
+
+li button {
+  border: 0;
+  outline: none;
+}
+
+.buttons i {
+  transform: scale(1.5);
 }
