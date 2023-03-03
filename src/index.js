@@ -1,15 +1,24 @@
 import './style.css';
+import CheckBoxEvent from './modules/checkbox.js';
 
 const toDoList = document.querySelector('.content-container');
+const headtag = document.querySelector('.headtag');
+headtag.innerText = "Today's To Do";
+function caller(e, id) {
+  CheckBoxEvent(e.target.checked, id);
+}
 
+window.caller = caller;
 // load saved tasks
 const loadTask = (tasks) => {
   tasks.sort((a, b) => a.index - b.index);
   toDoList.innerHTML = '';
+
   tasks.forEach((task) => {
     const template = ` <li>
-                          <input type="checkbox" class="checkbox" data-index="${task.index}" ${task.completed ? 'checked' : ''} class="me-2 mt-2" />
-                          <input type="text" class="task-description" data-index="${task.index}" value ="${task.description}" />
+                          <input type="checkbox"  onchange=" caller(event,'check-${task.index}') " class="checkbox" data-index="${task.index}" ${task.completed ? 'checked' : ''} class="me-2 mt-2" />
+                          <input type="text" id='check-${task.index}' class="task-description todo-description ${
+  task.completed ? 'completed' : ''}" data-index="${task.index}" value ="${task.description}" />
                           <div class="buttons">
                             <div class="ellipsis">
                               <button class="btn-ellipsis" data-index="${task.index}">
@@ -26,7 +35,6 @@ const loadTask = (tasks) => {
     toDoList.innerHTML += template;
   });
 };
-
 // add new task
 const addTask = () => {
   const add = document.querySelector('.task-input').value;
@@ -36,7 +44,6 @@ const addTask = () => {
     completed: false,
     index: tasks.length + 1,
   };
-
   tasks.push(newTask);
   loadTask(tasks);
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -53,12 +60,13 @@ const removeTask = (value) => {
   loadTask(filtered);
 };
 
-// calling addTask() when user enters
+// calling addTask() when user press Enter
 const input = document.querySelector('.task-input');
 input.addEventListener('keyup', (event) => {
   event.preventDefault();
   if (event.key === 'Enter') {
     addTask();
+    input.value = '';
   }
 });
 
@@ -79,16 +87,6 @@ toDoList.addEventListener('click', (e) => {
   }
 });
 
-// check the boxes
-toDoList.addEventListener('change', (event) => {
-  if (event.target.type === 'checkbox') {
-    const index = parseInt(event.target.dataset.index, 10);
-    const task = tasks.find((task) => task.index === index);
-    task.completed = event.target.checked;
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-});
-
 // editing the todos
 toDoList.addEventListener('keyup', (event) => {
   if (event.target.classList.contains('task-description')) {
@@ -97,4 +95,16 @@ toDoList.addEventListener('keyup', (event) => {
     task.description = event.target.value;
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
+});
+
+// clear all completed tasks
+const clearBtn = document.getElementById('clearall');
+clearBtn.innerText = 'Clear All Completed';
+clearBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const filtered = tasks.filter((task) => !task.completed);
+  filtered.forEach((task, i) => { task.index = i + 1; });
+  localStorage.setItem('tasks', JSON.stringify(filtered));
+  loadTask(filtered);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "webpack",
+  "name": "To-Do-List",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danutibe07/Webpack.git"
+    "url": "git+https://github.com/danutibe07/To-Do-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danutibe07/Webpack/issues"
+    "url": "https://github.com/danutibe07/To-Do-List/issues"
   },
-  "homepage": "https://github.com/danutibe07/Webpack#readme",
+  "homepage": "https://github.com/danutibe07/To-Do-List#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",

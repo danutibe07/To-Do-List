@@ -140,3 +140,7 @@ li button {
 .buttons i {
   transform: scale(1.5);
 }
+
+.completed {
+  text-decoration: line-through;
+}
