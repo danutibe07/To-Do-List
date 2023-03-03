@@ -2,12 +2,11 @@ import './style.css';
 import CheckBoxEvent from './modules/checkbox.js';
 
 const toDoList = document.querySelector('.content-container');
-const headtag = document.querySelector(".headtag")
-headtag.innerText= "Today's To Do"
+const headtag = document.querySelector('.headtag');
+headtag.innerText = "Today's To Do";
 function caller(e, id) {
   CheckBoxEvent(e.target.checked, id);
 }
-
 
 window.caller = caller;
 // load saved tasks
@@ -100,7 +99,7 @@ toDoList.addEventListener('keyup', (event) => {
 
 // clear all completed tasks
 const clearBtn = document.getElementById('clearall');
-clearBtn.innerText = "Clear All Completed"
+clearBtn.innerText = 'Clear All Completed';
 clearBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const tasks = JSON.parse(localStorage.getItem('tasks'));
