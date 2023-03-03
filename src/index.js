@@ -1,23 +1,23 @@
 import './style.css';
-import CheckBoxEvent from "./modules/checkbox.js"
-import ClearAllEvent from "./modules/clearAll.js"
+import CheckBoxEvent from './modules/checkbox.js';
+// import ClearAllEvent from './modules/clearAll.js';
+
 const toDoList = document.querySelector('.content-container');
-function caller  (e,id)  {
-  
-  CheckBoxEvent(e.target.checked,id)
+function caller(e, id) {
+  CheckBoxEvent(e.target.checked, id);
 }
 
-window.caller = caller
+window.caller = caller;
 // load saved tasks
 const loadTask = (tasks) => {
   tasks.sort((a, b) => a.index - b.index);
   toDoList.innerHTML = '';
-  
+
   tasks.forEach((task) => {
     const template = ` <li>
                           <input type="checkbox"  onchange=" caller(event,'check-${task.index}') " class="checkbox" data-index="${task.index}" ${task.completed ? 'checked' : ''} class="me-2 mt-2" />
                           <input type="text" id='check-${task.index}' class="task-description todo-description ${
-                            task.completed ? 'completed' : ''}" data-index="${task.index}" value ="${task.description}" />
+  task.completed ? 'completed' : ''}" data-index="${task.index}" value ="${task.description}" />
                           <div class="buttons">
                             <div class="ellipsis">
                               <button class="btn-ellipsis" data-index="${task.index}">
@@ -36,7 +36,7 @@ const loadTask = (tasks) => {
 };
 
 // check the boxes
-// toDoList.addEventListener('change', CheckBoxEvent); 
+// toDoList.addEventListener('change', CheckBoxEvent);
 
 // add new task
 const addTask = () => {
@@ -69,7 +69,7 @@ input.addEventListener('keyup', (event) => {
   event.preventDefault();
   if (event.key === 'Enter') {
     addTask();
-    input.value = "";
+    input.value = '';
   }
 });
 
