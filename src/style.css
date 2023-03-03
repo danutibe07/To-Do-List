@@ -126,17 +126,14 @@ li div {
 .hidden {
   display: none;
 }
-
 .buttons {
   width: 50px;
   z-index: 5;
 }
-
 li button {
   border: 0;
   outline: none;
 }
-
 .buttons i {
   transform: scale(1.5);
 }
