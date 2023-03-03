@@ -1,15 +1,23 @@
 import './style.css';
-
+import CheckBoxEvent from "./modules/checkbox.js"
+import ClearAllEvent from "./modules/clearAll.js"
 const toDoList = document.querySelector('.content-container');
+function caller  (e,id)  {
+  
+  CheckBoxEvent(e.target.checked,id)
+}
 
+window.caller = caller
 // load saved tasks
 const loadTask = (tasks) => {
   tasks.sort((a, b) => a.index - b.index);
   toDoList.innerHTML = '';
+  
   tasks.forEach((task) => {
     const template = ` <li>
-                          <input type="checkbox" class="checkbox" data-index="${task.index}" ${task.completed ? 'checked' : ''} class="me-2 mt-2" />
-                          <input type="text" class="task-description" data-index="${task.index}" value ="${task.description}" />
+                          <input type="checkbox"  onchange=" caller(event,'check-${task.index}') " class="checkbox" data-index="${task.index}" ${task.completed ? 'checked' : ''} class="me-2 mt-2" />
+                          <input type="text" id='check-${task.index}' class="task-description todo-description ${
+                            task.completed ? 'completed' : ''}" data-index="${task.index}" value ="${task.description}" />
                           <div class="buttons">
                             <div class="ellipsis">
                               <button class="btn-ellipsis" data-index="${task.index}">
@@ -27,6 +35,9 @@ const loadTask = (tasks) => {
   });
 };
 
+// check the boxes
+// toDoList.addEventListener('change', CheckBoxEvent); 
+
 // add new task
 const addTask = () => {
   const add = document.querySelector('.task-input').value;
@@ -36,7 +47,6 @@ const addTask = () => {
     completed: false,
     index: tasks.length + 1,
   };
-
   tasks.push(newTask);
   loadTask(tasks);
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -59,6 +69,7 @@ input.addEventListener('keyup', (event) => {
   event.preventDefault();
   if (event.key === 'Enter') {
     addTask();
+    input.value = "";
   }
 });
 
@@ -76,16 +87,6 @@ toDoList.addEventListener('click', (e) => {
   } else if (e.target.closest('.btn-trash')) {
     const trashBtn = e.target.closest('.btn-trash');
     removeTask(trashBtn.dataset.index);
-  }
-});
-
-// check the boxes
-toDoList.addEventListener('change', (event) => {
-  if (event.target.type === 'checkbox') {
-    const index = parseInt(event.target.dataset.index, 10);
-    const task = tasks.find((task) => task.index === index);
-    task.completed = event.target.checked;
-    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 });
 
