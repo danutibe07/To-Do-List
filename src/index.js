@@ -1,5 +1,6 @@
 import './style.css';
 import CheckBoxEvent from './modules/checkbox.js';
+
 const toDoList = document.querySelector('.content-container');
 
 function caller(e, id) {
@@ -103,6 +104,5 @@ clearBtn.addEventListener('click', (e) => {
   const filtered = tasks.filter((task) => !task.completed);
   filtered.forEach((task, i) => { task.index = i + 1; });
   localStorage.setItem('tasks', JSON.stringify(filtered));
-  loadTask(filtered)
+  loadTask(filtered);
 });
-
