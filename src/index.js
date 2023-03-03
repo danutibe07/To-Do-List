@@ -1,8 +1,7 @@
 import './style.css';
 import CheckBoxEvent from './modules/checkbox.js';
-// import ClearAllEvent from './modules/clearAll.js';
-
 const toDoList = document.querySelector('.content-container');
+
 function caller(e, id) {
   CheckBoxEvent(e.target.checked, id);
 }
@@ -34,10 +33,6 @@ const loadTask = (tasks) => {
     toDoList.innerHTML += template;
   });
 };
-
-// check the boxes
-// toDoList.addEventListener('change', CheckBoxEvent);
-
 // add new task
 const addTask = () => {
   const add = document.querySelector('.task-input').value;
@@ -63,7 +58,7 @@ const removeTask = (value) => {
   loadTask(filtered);
 };
 
-// calling addTask() when user enters
+// calling addTask() when user press Enter
 const input = document.querySelector('.task-input');
 input.addEventListener('keyup', (event) => {
   event.preventDefault();
@@ -111,4 +106,3 @@ clearBtn.addEventListener('click', (e) => {
   loadTask(filtered)
 });
 
-console.log(clearBtn)
