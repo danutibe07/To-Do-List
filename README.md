@@ -8,7 +8,7 @@
 - [📖 About the Project](#about-project)
 - [Tech Stack](#tech-stack)
 - [Key Features](#key-features)
-<!-- - [🚀 Live Demo](#live-demo) -->
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -47,11 +47,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://danutibe07.github.io/To-Do-List/dist/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
