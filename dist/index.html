@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c0fd8031c3.js" defer crossorigin="anonymous"></script>
 <script defer src="main.js"></script></head>
     <body>
         <main id="container">
           <div class="heading">
-            <h1>Today's To Do</h1>
+            <h1 class="headtag"></h1>
             <i class="uil uil-sync refresh"></i>
           </div>
           <div class="inputControl">
@@ -19,9 +19,8 @@
               class="task-input">
             <i class="uil uil-enter enter"></i>
           </div>
-          <ul class="content"></ul>
-          <button class="clearall">
-            Clear All Completed
+          <ul class="content-container"></ul>
+          <button class="clearall"  id="clearall">
           </button>
         </main>
         <script src="./index.js"></script>

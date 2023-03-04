@@ -21,9 +21,7 @@ node_modules/
 # IDE file
 .idea/
 .vscode/
-
-# lock file
-package-lock.json
-
 #
 test.md
+
+package-lock.json
