@@ -26,7 +26,7 @@
 
 # 📖 Awesome Books <a name="about-project"></a>
 
-> It's a book collection project. Use only JavaScript & CSS to build this.
+> It's a book collection project. It was built with JavaScript , webpack & CSS.
 
 ### 🛠 Tech Stack <a name="tech-stack"></a>
 
