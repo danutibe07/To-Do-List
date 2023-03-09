@@ -2,6 +2,7 @@ import CheckBoxes from './checkbox.js';
 
 const LocalStorageMock = {
   getItem: jest.fn().mockReturnValue(JSON.stringify([
+    // Assert
     { index: 1, description: 'Task 1', completed: false },
     { index: 2, description: 'Task 2', completed: false },
     { index: 3, description: 'Task 3', completed: false },
