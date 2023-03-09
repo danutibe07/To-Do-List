@@ -1,6 +1,6 @@
-import Clear from './clear';
+import Clear from './clear.js';
 // Mock localStorage
-const localStorageMock = (() => {~``
+const localStorageMock = (() => {
   let store = {};
   return {
     getItem: (key) => store[key],
@@ -27,11 +27,21 @@ describe('Clear function', () => {
     // Assert
     const updatedTasks = JSON.parse(localStorageMock.getItem('tasks'));
     const expectedTasks = [
-      {id: 2, description: 'Task 2', completed: false, index: 1,},
-      {id: 4, description: 'Task 4', completed: false, index: 2,},
-      {id: 5, description: 'Task 5', completed: false , index : 3},
-      {id: 6, description: 'Task 6', completed: false , index : 4},
-      {id: 7, description: 'Task 7', completed: false , index: 5},
+      {
+        id: 2, description: 'Task 2', completed: false, index: 1,
+      },
+      {
+        id: 4, description: 'Task 4', completed: false, index: 2,
+      },
+      {
+        id: 5, description: 'Task 5', completed: false, index: 3,
+      },
+      {
+        id: 6, description: 'Task 6', completed: false, index: 4,
+      },
+      {
+        id: 7, description: 'Task 7', completed: false, index: 5,
+      },
     ];
     expect(updatedTasks).toEqual(expectedTasks);
   });
@@ -48,7 +58,9 @@ describe('Clear function', () => {
     // Assert
     const updatedTasks = JSON.parse(localStorageMock.getItem('tasks'));
     const expectedTasks = [
-      {id: 2, description: 'Task 2', completed: false, index: 1,},
+      {
+        id: 2, description: 'Task 2', completed: false, index: 1,
+      },
     ];
     expect(updatedTasks).toEqual(expectedTasks);
   });

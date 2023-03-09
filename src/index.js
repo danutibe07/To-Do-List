@@ -1,5 +1,7 @@
 import './style.css';
 import CheckBoxEvent from './modules/checkbox.js';
+// import addTask from './modules/addTask';
+// import removeTask from './modules/removeTask';
 
 const toDoList = document.querySelector('.content-container');
 const headtag = document.querySelector('.headtag');
@@ -35,7 +37,9 @@ const loadTask = (tasks) => {
     toDoList.innerHTML += template;
   });
 };
-// add new task
+
+export default loadTask;
+
 const addTask = () => {
   const add = document.querySelector('.task-input').value;
   const tasks = JSON.parse(localStorage.getItem('tasks') || JSON.stringify([]));
@@ -49,17 +53,6 @@ const addTask = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-// remove a task
-const removeTask = (value) => {
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  const filtered = tasks.filter((task) => task.index !== parseInt(value, 10));
-  filtered.forEach((task, i) => {
-    task.index = i + 1;
-  });
-  localStorage.setItem('tasks', JSON.stringify(filtered));
-  loadTask(filtered);
-};
-
 // calling addTask() when user press Enter
 const input = document.querySelector('.task-input');
 input.addEventListener('keyup', (event) => {
@@ -69,6 +62,16 @@ input.addEventListener('keyup', (event) => {
     input.value = '';
   }
 });
+
+const removeTask = (value) => {
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const filtered = tasks.filter((task) => task.index !== parseInt(value, 10));
+  filtered.forEach((task, i) => {
+    task.index = i + 1;
+  });
+  localStorage.setItem('tasks', JSON.stringify(filtered));
+  loadTask(filtered);
+};
 
 // loading Tasks when page loads
 const tasks = JSON.parse(localStorage.getItem('tasks'));
